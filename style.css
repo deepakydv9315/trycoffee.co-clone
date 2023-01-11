@@ -64,10 +64,19 @@ nav{
     justify-content: center;
     align-items: center;
     gap: 0px 10px;
+    width: 280px;
 }
 
 .nav-btn i{
     font-size: 24px;
+}
+.btn-text{
+    flex: 1;
+    border: 1px solid black;
+}
+.nav-icon-arrow{
+    /* opacity: 0; */
+    display: none;
 }
 
 .btn{
@@ -76,7 +85,48 @@ nav{
     border-radius: 10px;
 }
 
-.nav-btn:hover .nav-icon{
-    transform: translateX(-30px);
+.nav-btn:hover .nav-icon-app{
     transition: all 0.3s linear;
+    animation: trans-hide 0.3s 1 forwards linear;
+}
+.nav-btn:hover .nav-icon-arrow {
+    transition: all 0.3s linear;
+    animation: trans-revel 0.3s 1 forwards linear;
+    display: block;
+    
+}
+
+@keyframes trans-hide{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+}
+@keyframes trans-revel{
+    0%{
+        transform: translateX(30px);
+        /* opacity: 0; */
+       
+    }
+    100%{
+        transform: translateX(-00px);
+        opacity: 1;
+        display: block;
+    }
+}
+.nav-btn:hover .btn-text{
+    transition: all 0.3s linear;
+    animation: trans 0.3s 1 forwards linear;
+}
+
+@keyframes trans{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-30px);
+    }
 }
